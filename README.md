@@ -18,6 +18,7 @@ These skills turn Claude Code into a full-stack brand operator: creative directo
 
 | Skill | What it does |
 |---|---|
+| **[livera-cmo-brief](./livera-cmo-brief/)** | Daily AI CMO briefing — a 10-paragraph morning email from "Vera" covering: highest-stakes deliverable, narrative coherence audit, competitive signals, category timing, competitor gap analysis, influencer seeding, creative direction, retention lifecycle, a bold move, and one decision to make today. Runs market intelligence searches, reads your ops board, and sends via Resend API. |
 | **[livera-ugc](./livera-ugc/)** | UGC and community content strategy. 8 tactical levers for treating customers like influencers (community reveals, early testing, PR list prioritization, UGC challenges, early access, spotlights, events, high-touch gestures). Includes a full UGC creator brief template. |
 | **[gruns-chad-mentor](./gruns-chad-mentor/)** | Strategic advisor channeling the Gruns playbook — the $1.2B CPG brand built in 32 months and acquired by Unilever. Applies the 8 pillars (daily habit, DTC proof, subscription, UGC, founder-led storytelling, retention, acquisition readiness, sequenced distribution) to your brand decisions. |
 
@@ -58,6 +59,7 @@ Or reference them in your user settings at `~/.claude/settings.json`.
 
 Each skill has trigger phrases in its frontmatter. Examples:
 
+- "CMO brief" or "morning brief" → triggers `livera-cmo-brief`
 - `/ugc` or "write me a UGC brief" → triggers `livera-ugc`
 - `/livera-image` or "generate a Livera ad" → triggers `livera-image-gen`
 - `/lp-builder` or "build me a landing page" → triggers `lp-builder`
@@ -82,6 +84,7 @@ Some skills require external tools:
 
 | Skill | Requires |
 |---|---|
+| `livera-cmo-brief` | [Resend](https://resend.com) API key + email service |
 | `livera-image-gen` | [Nano Banana CLI](https://github.com/anthropics/nano-banana) + Gemini API key |
 | `brand-assets-generator` | Gemini API key (`GEMINI_API_KEY` env var) |
 | `lp-builder` | Stitch MCP or Framer MCP connection |
@@ -94,6 +97,8 @@ skills/
 ├── brand-assets-generator/
 │   └── SKILL.md
 ├── canva-deck/
+│   └── SKILL.md
+├── livera-cmo-brief/
 │   └── SKILL.md
 ├── gruns-chad-mentor/
 │   └── SKILL.md
